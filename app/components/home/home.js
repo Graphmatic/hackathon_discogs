@@ -27,8 +27,6 @@ function Home(Artist, LastArtistReleases, Label) {
 
     angular.forEach(artistsId, function(v, k) {
         let tmp = {};
-        // tmp.artist = Artist.get({id: v});
-        // tmp.release = c
         tmp = Artist.get({id: v});
         tmp.$promise.then(function(data) { // then get release
             // backup
@@ -45,10 +43,7 @@ function Home(Artist, LastArtistReleases, Label) {
     this.artistsReleases = releases;
 
     this.getArtistReleases = function(id) {
-        console.log(this.artistsReleases[id]);
                 return this.artistsReleases[id];
-        // this.artistReleases[id] = LastArtistReleases.get({artist_id : id});
-        // return 
     }
 
     this.label = function(id) {

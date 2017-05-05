@@ -1,0 +1,20 @@
+<div class="container search-wrapper">
+    <div ng-if="$ctrl.isresult==true" class="row">
+        <div class="col s1"><button ng-if="$ctrl.searchResult.results.page > 1" ng-click="$ctrl.previousPage()">previous</button>
+        </div>
+        <div class="search-block col s10" ng-repeat="result in $ctrl.searchResult.results">
+            <a ui-sref="result.type({ id : result.id })">
+                <h3>{{ result.title}}</h3>
+                <!--<img ng-if="result.thumb" src="{{ result.thumb }}"/>-->
+            </a>
+        </div>
+        <div class="col s1"><button ng-click="$ctrl.nextPage()">next</button>
+        </div>
+    </div>
+    <div ng-if="$ctrl.isresult==false" class="row">
+        <div class="col s12">No result...</div>
+    </div>
+      
+</div>
+
+ <!--ng-if="$ctrl.searchResult.results.pages != $ctrl.searchResult.results.page"-->
