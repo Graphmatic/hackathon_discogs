@@ -7,7 +7,7 @@ angular.module("discogs")
     })
 
 
-function ShowResult($state, $stateParams, SearchNextPrevious) {
+function ShowResult($state, $stateParams, SearchNextPrevious, $resource) {
     this.isresult = false;
     if($stateParams.result) {
         this.isresult = true;
@@ -15,17 +15,22 @@ function ShowResult($state, $stateParams, SearchNextPrevious) {
     }
 
     this.previousPage = function() {
-        SearchNextPrevious.get({query: this.searchResult.urls.previous}).$promise.then(
-            function( results ) {
-                $state.go('search', { result: results });        
+        if(this.searchResult.pagination.urls.prev){
+ $resource(this.searchResult.pagination.urls.prev, { key: "fpGYiblwrVtRlaJQmfoX", secret: "LPlyPcMzpdqusNFZuoTSVaqeqZDCKzxf"}).get().$promise.then(
+                function( results ) {
+                    $state.go('search', { result: results });        
             });
+        }
+        
     }
      this.nextPage = function() {
-         console.log('next');
-        SearchNextPrevious.get({query: this.searchResult.urls.next}).$promise.then(
-            function( results ) {
-                $state.go('search', { result: results });        
+        if(this.searchResult.pagination.urls.next){
+         
+         $resource(this.searchResult.pagination.urls.next, { key: "fpGYiblwrVtRlaJQmfoX", secret: "LPlyPcMzpdqusNFZuoTSVaqeqZDCKzxf"}).get().$promise.then(
+                function( results ) {
+                    $state.go('search', { result: results });        
             });
+        }
     }
    
     // if( !this.searchResult.status == "200" && this.searchResult.data.results.lenght > 0 ) {

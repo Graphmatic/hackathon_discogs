@@ -1,8 +1,8 @@
 "use strict";
 
 angular.module("discogs")
-    .component("label", {
-        templateUrl: "app/components/label/label.html",
+    .component("labels", {
+        templateUrl: "app/components/label/labels.html",
         controller: LabelDetail
     })
 

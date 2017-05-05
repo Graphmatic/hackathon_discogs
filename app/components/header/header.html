@@ -1,32 +1,35 @@
 <div class="header">
     <div class="row">
-        <div class="col s4">
-           <h2>FuNC DISCOGS<small>reader</small></h2>
+        <div class="col s3">
+           <h2>FuNC DISCOGS<br><small>reader</small></h2>
         </div>  
-        <div class="col s8">
+        <div class="col s9">
+            
             <div class="row">
                  <form name="search_form">
-                <div class="col s3">
+                
+                <div class="col s4">
                     <label for="search_type">Search by..</label>
                     <select id="search_type" name="search_type" ng-model="$ctrl.search.type">
                         <option ng-repeat="option in $ctrl.selectOptions" value="{{ option.value }}">{{ option.name }}</option>
                     </select>
-                    <input id="search_query" type="year" name="search_query" ng-model="$ctrl.search.query" />                    
+                    <label for="search_query">Search:</label>                    
+                    <input id="search_query" type="year" name="search_query" ng-model="$ctrl.search.q" />                    
                 </div>
-                 <div class="col s3">
+                 <div class="col s4">
                     <label for="search_year">Year:</label>
                     <input id="search_year" type="year" name="search_year" ng-model="$ctrl.search.year" placeholder="yyyy" min="1890" max="{{$ctrl.currentYear}}" />
+                    <label for="search_country">Country:</label>
+                    <input id="search_country" type="year" name="search_country" ng-model="$ctrl.search.country" />
                 </div>
                 <div class="col s4">
                     <label for="search_genre">Genre:</label>
                     <input id="search_genre" type="year" name="search_genre" ng-model="$ctrl.search.genre" />                    
-                    <label for="search_country">Country:</label>
-                    <input id="search_country" type="year" name="search_country" ng-model="$ctrl.search.country" />
+                    <button class="search-submit btn" ng-click="$ctrl.startSearch()">search</button>
                 </div>
-                <div class="col s2">
-                    <button ng-click="$ctrl.startSearch()">Find!</button>
-                </div>  
-                 </form>              
+               </form> 
+               </div>
+                              
         </div>  
     </div>
 </div>

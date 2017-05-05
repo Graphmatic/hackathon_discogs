@@ -31,7 +31,8 @@ function Header(Search, $state, $stateParams) {
         year: "",
         country: "",
         artist: "",
-        release_title: ""
+        release_title: "",
+        q: ""
     };
 
     this.startSearch = function() {
@@ -42,25 +43,28 @@ function Header(Search, $state, $stateParams) {
                  if( k === 'type' ) {
                      switch(v) {
                          case "artist":
-                         rep.artist = this.search.query;
                          break;
                          case "release":
                          rep.release_title = this.search.query;
+                         rep.q = "";                         
                          break;
                          case "label":
                          rep.label = this.search.query;
+                         rep.q = "";                                                  
                          break;
-                     }
+                     } 
                  }
             }
         }, this);
+
+       
+
 
         Search.get(rep).$promise.then(
             function( results ) {
                 $state.go('search', { result: results });        
             });
-
-
-    // /database/search?q={query}&{?type,title,release_title,credit,artist,anv,label,genre,style,country,year,format,catno,barcode,track,submitter,contributor}
     }
+
+   
 }
