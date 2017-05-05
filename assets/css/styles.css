@@ -61,7 +61,7 @@ h5 {
     background: #c1c1C1;
     padding: 12px;
 }
-.artist-block {
+.artist-block, .artist-wrapper, .release-wrapper {
     height: 600px;
     background: #535a66;
     color: #fff;
@@ -105,4 +105,16 @@ h3, h4 {
     color: #2a2b33;
 }
 
+a {
+    color:rgb(234, 64, 122);
+}
+a:hover {
+    color:rgb(158,158,158);
+}
+
+/* Page artiste */
+
+h1, h2 {
+    text-align: center;
+}
 
