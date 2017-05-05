@@ -1,4 +1,5 @@
-<img class="release-img" ng-src="{{$ctrl.label.images[0].uri}}" alt="Aucune image disponible" style="height: 200px; width: 200px">
+<div class="row">
+    <img class="release-img" ng-src="{{$ctrl.label.images[0].uri}}" alt="Aucune image disponible" style="height: 200px; width: 200px">
 <h1 style="color: red;">{{$ctrl.label.name}}</h1>
 <h3>Description :</h3>
 <p>{{$ctrl.label.profile}}</p>
@@ -23,4 +24,5 @@
     </span> 
     <strong>Artiste : </strong><a ui-sref="artist({ id : release.id })">{{release.artist}}</a><br>
     <hr>
+</div>
 </div>

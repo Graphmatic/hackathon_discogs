@@ -21,6 +21,7 @@ function ShowResult($state, $stateParams, SearchNextPrevious) {
             });
     }
      this.nextPage = function() {
+         console.log('next');
         SearchNextPrevious.get({query: this.searchResult.urls.next}).$promise.then(
             function( results ) {
                 $state.go('search', { result: results });        

@@ -33,6 +33,7 @@ angular.module("discogs", [
                 name: "search",
                 url: "/search",
                 params: {result:null},
+                component: "search"
             }
         ];
         $urlRouterProvider.otherwise("/home");
