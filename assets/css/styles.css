@@ -1,21 +1,58 @@
 /*header */
-
+@import url('https://fonts.googleapis.com/css?family=Galindo');
 html {
     font-family: GillSans, Calibri, Trebuchet, sans-serif;
   }
 
 .header {
-    padding: 20px;
+    padding: 20px 12px 0;
     background: #2a2b33;
     border-bottom: 2px solid #5c5f72;
 }
 .header h2 {
+    font-family: 'Galindo', cursive;
+    letter-spacing: 4px;
     font-size: 28px;
     font-weight: bold;
     color: #50909b;
+    text-align: center;
+    text-shadow: 2px 2px 1px #fff;
+}
+label {
+    margin: 4px 4%;
+    font-size: 14px;
+    font-weight: bold;
 }
 select {
     display: block;
+}
+select, input {
+    margin: 6px 16px;
+    padding: 4px;
+    width: 90%;
+    height: 35px;
+}
+.search-submit {
+    display: block;
+    width: 90%;
+    margin: 16px auto 0;
+    font-weight: bold;
+}
+.nav-button {
+    position: relative;
+    top: 12px;
+}
+.search-wrapper {
+    padding: 20px;
+    background: #50909b;
+}
+.search-block {
+    padding: 12px;
+    border-bottom: 1px solid #fff;
+}
+.search-thumb {
+    width: 120px;
+    height: 120px;
 }
 h5 {
     font-size: 19px;
