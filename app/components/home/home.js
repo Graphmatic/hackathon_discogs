@@ -18,8 +18,9 @@ function Home(Artist, LastArtistReleases, Label) {
         "114318",    // Bushwick Bill
         "661",    // Bill Laswell
         "82663",  // Hijack
-        "10783"  // Beastie Boys
-
+        "10783",  // Beastie Boys
+        "3140", //tricky
+        "529450" // bireli 
     ];
     let artists = [];
     let labels = [];
