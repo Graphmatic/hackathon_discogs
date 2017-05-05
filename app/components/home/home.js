@@ -13,12 +13,12 @@ function Home(Artist, LastArtistReleases, Label) {
         "65049",
         "133768",   // Big Pun
         "767240",    // 5 Wards Juvenilez
-        // "10584",    // Nina Simone
-        // "15588",    // Gonzalez
-        // "114318",    // Bushwick Bill
-        // "661",    // Bill Laswell
-        // "82663",  // Hijack
-        // "10783"  // Beastie Boys
+        "10584",    // Nina Simone
+        "15588",    // Gonzalez
+        "114318",    // Bushwick Bill
+        "661",    // Bill Laswell
+        "82663",  // Hijack
+        "10783"  // Beastie Boys
 
     ];
     let artists = [];

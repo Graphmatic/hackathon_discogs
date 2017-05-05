@@ -1,11 +1,13 @@
-<div>
+<div class="row">
     <!--Entête => Informations générales-->
     <img class="release-img" ng-src="{{release.thumb}}" alt="album image" style="height: 200px; width: 200px">
     <h2>{{release.artists[0].name}}</h2>
+
+  
     <strong>Title :</strong> {{release.title}}
     <br>
     <span ng-hide="release.videos[0].description == null">
-        <strong>Description :</strong> {{release.videos[0].description}}
+        <strong>Description</strong> {{release.videos[0].description}}
     </span>
     <br>
     <strong>Année :</strong> {{release.released}}
@@ -27,26 +29,27 @@
     <span ng-repeat="genre in release.genres">
         {{genre}} 
     </span>
+
     <hr>
-    <h4>Informations générales : </h4>
+    <h4>Informations générales</h4>
     <strong>Rate form the community : </strong>
     <span ng-if="release.community.rating.count == 0">Unrated</span>
     <span ng-if="release.community.rating.count != 0">{{release.community.rating.count}} </span>
     <hr>
     <!--====================Morceaux======= =========-->
 
-    <h4>Morceaux : </h4>
+    <h4>Morceaux</h4>
     <br>
-    <div ng-repeat="track in release.tracklist">
+    <div class="tracks" ng-repeat="track in release.tracklist">
         {{track.position}} {{track.title}} - {{track.duration}}
         <a ui-sref="artist({ id : track.artists[0].id })">
             {{track.artists[0].name}}
         </a>
     </div>
     <hr>
-    <h3>Videos :</h3>
-    <div ng-repeat="video in release.videos">
-        <iframe width="420" height="315" ng-src="{{video.uri}}">
+    <h3>Videos</h3>
+    <div class="col s6" ng-repeat="video in release.videos">
+        <iframe width="500" height="350" ng-src="{{video.uri}}">
         </iframe>
     </div>
     <hr>
