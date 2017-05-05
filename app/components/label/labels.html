@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row label-wrapper">
     <img class="release-img" ng-src="{{$ctrl.label.images[0].uri}}" alt="Aucune image disponible" style="height: 200px; width: 200px">
 <h1 style="color: red;">{{$ctrl.label.name}}</h1>
 <h3>Description :</h3>
@@ -9,7 +9,6 @@
 </div>
 
 <h2>Discographie</h2>
-<hr>
 <div ng-repeat="release in $ctrl.releases.releases">
     <span ng-hide="{{release.format == null}}"> 
         <img class="artist-img" ng-src="{{release.thumb}}" alt="album image" style="height: 100px; width: 100px">
@@ -23,6 +22,5 @@
         <strong>Year : </strong>{{release.year}}<br>
     </span> 
     <strong>Artiste : </strong><a ui-sref="artist({ id : release.id })">{{release.artist}}</a><br>
-    <hr>
 </div>
 </div>

@@ -2,8 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Galindo');
 html {
     font-family: GillSans, Calibri, Trebuchet, sans-serif;
-  }
-
+}
 .header {
     padding: 20px 12px 0;
     background: #2a2b33;
@@ -61,11 +60,26 @@ h5 {
     background: #c1c1C1;
     padding: 12px;
 }
-.artist-block, .artist-wrapper, .release-wrapper {
+.artist-block, .artist-wrapper, .label-wrapper, .release-wrapper {
     height: 600px;
     background: #535a66;
     color: #fff;
     text-align: center;
+}
+.artist-wrapper div, .release-wrapper div, .label-wrapper div {
+    padding: 18px;
+    background: #535a66;
+    color: #fff;
+    text-align: center;
+    border-bottom: 1px solid #fff;    
+}
+.label-wrapper h2 {
+    background: #535a66;
+    color: #fff;
+    text-align: center;
+    border-bottom: 1px solid #fff;   
+    padding: 18px;
+    margin: 0; 
 }
 .img-wrapp {
     display: block;
