@@ -25,9 +25,9 @@ angular.module("discogs", [
                 component: "release"
             },
             {
-                name: "label",
-                url: "/label/:id",
-                component: "label"
+                name: "labels",
+                url: "/labels/:id",
+                component: "labels"
             },
             {
                 name: "search",

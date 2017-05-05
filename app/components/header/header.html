@@ -11,7 +11,7 @@
                     <select id="search_type" name="search_type" ng-model="$ctrl.search.type">
                         <option ng-repeat="option in $ctrl.selectOptions" value="{{ option.value }}">{{ option.name }}</option>
                     </select>
-                    <input id="search_query" type="year" name="search_query" ng-model="$ctrl.search.query" />                    
+                    <input id="search_query" type="year" name="search_query" ng-model="$ctrl.search.q" />                    
                 </div>
                  <div class="col s3">
                     <label for="search_year">Year:</label>
