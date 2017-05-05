@@ -2,17 +2,28 @@
     <img class="artist-img" ng-src="{{ $ctrl.artist.images[0].uri }}" alt="{{ $ctrl.artist.id }}" style="height: 200px; width: 200px"
     />
     <h1>{{$ctrl.artist.name}}</h1>
-    <p>{{$ctrl.artist.profile}}</p>
+    <span ng-hide="{{$ctrl.artist.profile == null}}">
+        <h3>Description :</h3>
+        <p>{{$ctrl.artist.profile}}</p>
+    </span>
 
     <h2>Releases :</h2>
-    
+
     <div ng-repeat="release in $ctrl.releases.releases">
-        <img class="artist-img" ng-src="{{release.thumb}}" alt="album image" style="height: 100px; width: 100px">
+        <span ng-hide="{{release.thumb == null}}">
+            <img class="artist-img" ng-src="{{release.thumb}}" alt="album image" style="height: 100px; width: 100px">
+        </span>
         <strong>Title : </strong>
         <a ui-sref="release({ id : release.id })">{{release.title}}</a><br>
-        <strong>Nombre de morceaux : </strong>{{release.format}}<br>        
-        <strong>Year : </strong>{{release.year}}<br>
-        <strong>Label : </strong>{{release.label}}<br>
+        <span ng-hide="{{release.format == null}}">
+            <strong>Format : </strong>{{release.format}}<br>
+        </span>
+        <span ng-hide="{{release.year == null}}">    
+            <strong>Year : </strong>{{release.year}}<br>
+        </span>
+        <span ng-hide="{{release.label == null}}">
+            <strong>Label : </strong>{{release.label}}<br>
+        </span>
         <hr>
     </div>
 </div>

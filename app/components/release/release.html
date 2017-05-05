@@ -1,32 +1,53 @@
 <div>
-    <img class="release-img" ng-src="{{$ctrl.release.thumb}}" alt="album image" style="height: 200px; width: 200px">
-    <strong>Title :</strong> {{$ctrl.release.title}}
+    <!--Entête => Informations générales-->
+    <img class="release-img" ng-src="{{release.thumb}}" alt="album image" style="height: 200px; width: 200px">
+    <h2>{{release.artists[0].name}}</h2>
+    <strong>Title :</strong> {{release.title}}
     <br>
-    <strong>Description :</strong> {{$ctrl.release.videos[0].description}}
-    <br>
-    <strong>Année :</strong> {{$ctrl.release.released}}
-    <br>
-    <strong>Poid :</strong> {{$ctrl.release.estimated_weight}}g
-    <br>
-    <strong>Styles/Genres :</strong>
-    <span ng-repeat="style in $ctrl.release.styles">
-        {{style}} 
-    </span>/
-    <span ng-repeat="genre in $ctrl.release.genres">
-        {{genre}} 
+    <span ng-hide="release.videos[0].description == null">
+        <strong>Description :</strong> {{release.videos[0].description}}
     </span>
     <br>
-    <strong>Morceaux : </strong>
+    <strong>Année :</strong> {{release.released}}
     <br>
-    <div ng-repeat="track in $ctrl.release.tracklist">
+    <strong>Labels :</strong>
+    <div ng-repeat="label in release.labels">
+        <a ui-sref="label({ id : label.id })">
+            {{label.name}}
+        </a>
+    </div>
+    <strong>Prix :</strong> {{release.lowest_price}} $
+    <br>
+    <strong>Poid :</strong> {{release.estimated_weight}}g
+    <br>
+    <strong>Styles/Genres :</strong>
+    <span ng-repeat="style in release.styles">
+        {{style}} 
+    </span>/
+    <span ng-repeat="genre in release.genres">
+        {{genre}} 
+    </span>
+    <hr>
+    <h4>Informations générales : </h4>
+    <strong>Rate form the community : </strong>
+    <span ng-if="release.community.rating.count == 0">Unrated</span>
+    <span ng-if="release.community.rating.count != 0">{{release.community.rating.count}} </span>
+    <hr>
+    <!--====================Morceaux======= =========-->
+
+    <h4>Morceaux : </h4>
+    <br>
+    <div ng-repeat="track in release.tracklist">
         {{track.position}} {{track.title}} - {{track.duration}}
         <a ui-sref="artist({ id : track.artists[0].id })">
             {{track.artists[0].name}}
         </a>
     </div>
     <hr>
-    <div ng-repeat="artist in $ctrl.release.artists">
-
+    <h3>Videos :</h3>
+    <div ng-repeat="video in release.videos">
+        <iframe width="420" height="315" ng-src="{{video.uri}}">
+        </iframe>
     </div>
-    <hr> {{$ctrl.release}}
+    <hr>
 </div>
