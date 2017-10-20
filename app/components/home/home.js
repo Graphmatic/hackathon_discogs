@@ -10,8 +10,8 @@ angular.module("discogs")
 function Home(Artist, LastArtistReleases, Label) {
     let artistsId =  [
         "791",
-        "65049",
-        "133768",   // Big Pun
+        "3865",  // Herbie
+        "36665",   // Nick Cave
         "767240",    // 5 Wards Juvenilez
         "10584",    // Nina Simone
         "15588",    // Gonzalez
